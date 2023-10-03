@@ -6,34 +6,28 @@
 <h2>Bhavya Tatavarthi shows tip amount</h2>
 
 <label for="baseAmount">Enter base amount</label>
-<input type="number" id="baseAmount" value="50"><br><br>
+    <input type="number" id="baseAmount" value="50"><br><br>
 
-<label for="tipPercent">Enter the tip percent</label>
-<input type="number" id="tipPercent" value="15"><br><br>
+    <label for="tipPercent">Enter the tip percent</label>
+    <input type="number" id="tipPercent" value="15"><br><br>
 
-<button onclick="tips()">Show tip</button><br><br>
+    <button onclick="tips()">Show tip</button><br><br>
 
-<div id="result"></div>
+    <div id="result"></div>
+
+    <form>
+        <label><input type="radio" id="sum" name="operation" value="sum" onClick="chooseOp()">Sum</label>
+        <label><input type="radio"  id="difference" name="operation" value="difference" onClick="chooseOp()">Difference</label>
+        <label><input type="radio" id="product" name="operation" value="product" onClick="chooseOp()">Product</label>
+    </form>
+
 
 <script src="script.js"></script>
 
-<p id="result">This text will be replaced </p>
+<p id="result"></p>
 
 <script> 
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
 
 function tips() {
     const baseAmount = document.getElementById('baseAmount').value;
@@ -49,6 +43,31 @@ function tips() {
     const resultElement = document.getElementById('result');
     resultElement.innerHTML = 'Tips are: ' + myOutput;
 }
+
+function chooseOp() {
+    const baseAmount = document.getElementById('baseAmount').value;
+    const tipPercent = document.getElementById('tipPercent').value;
+    const operation = document.querySelector('input[name="operation"]:checked').value;
+    let result = 0;
+
+    switch (operation) {
+        case 'sum':
+            result = parseInt(baseAmount) + parseInt(tipPercent);
+            break;
+        case 'difference':
+            result = parseInt(baseAmount) - parseInt(tipPercent);
+            break;
+        case 'product':
+            result = parseInt(baseAmount) * parseInt(tipPercent);
+            break;
+        default:
+            break;
+    }
+
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = `${operation} of ${baseAmount} and ${tipPercent} is ${result}`;
+}
+
 
 </script>
 
