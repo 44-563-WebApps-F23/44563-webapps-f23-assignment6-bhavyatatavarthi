@@ -23,8 +23,7 @@
     <p id="results">cal</p>
 
 <script>
-
-
+    
 function tips() {
     const baseAmount = document.getElementById('baseAmount').value;
     const tipPercent = document.getElementById('tipPercent').value;
@@ -35,7 +34,6 @@ function tips() {
         const calculatedTip = (baseAmount * tipLevel) / 100;
         myOutput += `${tipLevel}% is ${calculatedTip.toFixed(2)}; `;
     }
-
     const resultElement = document.getElementById('result');
     resultElement.innerHTML = 'Tips are: ' + myOutput;
 }
