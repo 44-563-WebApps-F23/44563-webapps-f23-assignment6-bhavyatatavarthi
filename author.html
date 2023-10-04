@@ -7,12 +7,17 @@
 <body>
     
 <h2>Author entry Bhavya Tatavarthi</h2>
-<form>
-    <label for="author_name">The hidden author name </label>
+<form class="row g-3">
+    <div class="col-auto">
+        <label for="author_name">The hidden author name </label>
     <input type ="password" id="Hidden_author" name="Hidden_author" value="Dickens"> <br>
+      </div>
+      <div class="col-auto">
     <label for="form1_nick">Guess the author </label>
     <input type ="text" id="form1_nick" name="form1_nick"> <br>
-    <input type="button" onclick="checkAuthor()" value="Check the guess">
+    </div>
+    <div class="col-auto">
+    <input type="button" class="btn btn-info" onclick="checkAuthor()" value="Check the guess"></div>
 </form>
 <p id="result"> Good: <span id="good">0</span> Oops: <span id="oops">0</span></p>
 
@@ -20,7 +25,6 @@
     <img src="tor1.jpg" id="cityImage" onclick="selectImage()" width="100" height="100">
 </div>
 
-<script src="script.js"></script>
 <script> 
 var good=0;
 var oops=0;
