@@ -3,6 +3,7 @@
    <head>
     <title>Entries</title>
    </head>
+   <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <body>
     
 <h2>Author entry Bhavya Tatavarthi</h2>
@@ -29,7 +30,10 @@ function checkAuthor(){
     goodCount=document.getElementById("good")
     oopsCount=document.getElementById("oops")
     out = document.getElementById("result")
-    if(password===text){
+    if(oops>=7){
+        wrongMethod()
+    }
+    else if(password===text){
         good++
         alert("You got it right")
        goodCount.innerHTML = good
@@ -38,6 +42,10 @@ function checkAuthor(){
        alert("oops sorry")
        oopsCount.innerHTML=oops
     }
+}
+function wrongMethod(){
+    alert("Sorry, ran out of guesses.")
+    document.getElementById("btn").disabled=true
 }
 
 let useImage = 1;
