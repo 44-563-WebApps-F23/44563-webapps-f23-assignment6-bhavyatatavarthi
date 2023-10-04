@@ -6,12 +6,12 @@
 <h2>Bhavya Tatavarthi shows tip amount</h2>
 
 <label for="baseAmount">Enter base amount</label>
-    <input type="number" id="baseAmount" value="50"><br><br>
+    <input type="number" id="baseAmount" value="50"><br>
 
     <label for="tipPercent">Enter the tip percent</label>
-    <input type="number" id="tipPercent" value="15"><br><br>
+    <input type="number" id="tipPercent" value="15"><br>
 
-    <button onclick="tips()">Show tip</button><br><br>
+    <button onclick="tips()">Show tip</button><br>
 
     <div id="result"></div>
 
@@ -20,13 +20,9 @@
         <label><input type="radio"  id="difference" name="operation" value="difference" onClick="chooseOp()">Difference</label>
         <label><input type="radio" id="product" name="operation" value="product" onClick="chooseOp()">Product</label>
     </form>
+    <p id="results">cal</p>
 
-
-<script src="script.js"></script>
-
-<p id="result"></p>
-
-<script> 
+<script>
 
 
 function tips() {
@@ -64,7 +60,7 @@ function chooseOp() {
             break;
     }
 
-    const resultElement = document.getElementById('result');
+    const resultElement = document.getElementById('results');
     resultElement.innerHTML = `${operation} of ${baseAmount} and ${tipPercent} is ${result}`;
 }
 
