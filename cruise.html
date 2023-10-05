@@ -44,7 +44,6 @@ function selectCruise(){
     document.getElementById('result').innerHTML = JSON.stringify(my_cruise);   
 }
 function updateCruise() {
-    my_cruise={};
     const numOfDays = document.getElementById('numOfDays').value;
     const cruisePrice = document.getElementById('cruisePrice').value;
     my_cruise["days"] = numOfDays;
